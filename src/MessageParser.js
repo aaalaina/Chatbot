@@ -7,9 +7,13 @@ class MessageParser {
       this.actionProvider = actionProvider;
       this.state = state;
     }
-  
+
     parse(message) {
-      console.log(message)
+      //console.log(message)
+      const lcmessage = message.toLowerCase();
+      if(lcmessage.includes("hello")||lcmessage.includes("hi")||lcmessage.includes("wassup")){
+        this.actionProvider.greet();
+      }
     }
   }
   
